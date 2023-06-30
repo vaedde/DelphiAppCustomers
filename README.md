@@ -1,5 +1,5 @@
 # <strike>DelphiAppCustomers</strike>
-## **_The Delphi App Customers repository provides a comprehensive solution for managing customer information and interactions. With this application, you can easily store, update, and retrieve customer details, enabling efficient customer relationship management._**
+### **_The Delphi App Customers repository provides a comprehensive solution for managing customer information and interactions. With this application, you can easily store, update, and retrieve customer details, enabling efficient customer relationship management._**
 
 
 1. Customer Database: Maintain a centralized database to store customer information, including names, addresses, contact details, and additional notes.
@@ -16,7 +16,7 @@
 
 7. User-Friendly Interface: Enjoy a user-friendly interface with an intuitive design, ensuring ease of use for both novice and experienced users.
 
-## **_Contributing_**
+## **_Contributing:_**
 We welcome contributions from the developer community to enhance the features, fix issues, and improve the overall functionality of the DelphiAppCustomers repository. Please refer to the contribution guidelines for more information on how to get involved.
 
 We hope you find the DelphiAppCustomers repository useful for your customer management needs. Feel free to explore the code, raise issues, and contribute to make it even better. Happy coding!
