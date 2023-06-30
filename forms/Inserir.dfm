@@ -31,6 +31,8 @@ object frmInserir: TfrmInserir
       ActivePage = Empresa
       Align = alClient
       TabOrder = 0
+      ExplicitLeft = 120
+      ExplicitTop = 216
       object Cliente: TTabSheet
         Caption = 'Pessoa F'#237'sica'
         object pnlMianF: TPanel
@@ -648,7 +650,6 @@ object frmInserir: TfrmInserir
               BevelKind = bkFlat
               BevelOuter = bvNone
               TabOrder = 0
-              ExplicitWidth = 676
               object pnlLine3: TPanel
                 AlignWithMargins = True
                 Left = 3
@@ -659,7 +660,6 @@ object frmInserir: TfrmInserir
                 BevelKind = bkFlat
                 BevelOuter = bvNone
                 TabOrder = 0
-                ExplicitWidth = 666
                 object pnlLine4: TPanel
                   AlignWithMargins = True
                   Left = 3
@@ -670,7 +670,6 @@ object frmInserir: TfrmInserir
                   BevelKind = bkFlat
                   BevelOuter = bvNone
                   TabOrder = 0
-                  ExplicitWidth = 656
                 end
               end
             end
@@ -689,5 +688,45 @@ object frmInserir: TfrmInserir
         end
       end
     end
+  end
+  object RESTClient1: TRESTClient
+    BaseURL = 'http://viacep.com.br/ws/01001000/json'
+    Params = <>
+    SynchronizedEvents = False
+    Left = 880
+    Top = 440
+  end
+  object RESTRequest1: TRESTRequest
+    AssignedValues = [rvConnectTimeout, rvReadTimeout]
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 888
+    Top = 448
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 896
+    Top = 456
+  end
+  object RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter
+    Dataset = FDMemTable1
+    FieldDefs = <>
+    Response = RESTResponse1
+    TypesMode = Rich
+    Left = 904
+    Top = 464
+  end
+  object FDMemTable1: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable]
+    UpdateOptions.LockWait = True
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.CheckRequired = False
+    Left = 912
+    Top = 472
   end
 end

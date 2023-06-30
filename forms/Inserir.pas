@@ -5,7 +5,11 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Vcl.StdCtrls, Vcl.Mask, Vcl.Imaging.pngimage, Classes;
+  Vcl.StdCtrls, Vcl.Mask, Vcl.Imaging.pngimage, Classes, REST.Types,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Response.Adapter,
+  REST.Client, Data.Bind.Components, Data.Bind.ObjectScope;
 
 type
   TfrmInserir = class(TForm)
@@ -73,6 +77,11 @@ type
     pnlLine3: TPanel;
     pnlLine4: TPanel;
     edtNacionalidadeJ: TLabeledEdit;
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
+    RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter;
+    FDMemTable1: TFDMemTable;
     procedure btnAddFClick(Sender: TObject);
     procedure btnAddJClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -98,10 +107,6 @@ var
   Lines : Integer;
 begin
   try
-    Reset(arq);
-
-    Lines := 1;
-
     PF := TPFisica.Create;
     PF.Nome          := edtNomeComp.Text;
     PF.CPF           := edtCPF.Text;
@@ -120,6 +125,8 @@ begin
     PF.UF            := edtUFF.Text;
     PF.Tipo          := 'PF';
 
+    Reset(arq);
+    Lines := 1;
     while (not Eof(arq)) do begin
       Readln(arq, Linha);
       Lines := Lines + 1;
@@ -128,7 +135,7 @@ begin
     CloseFile(arq);
     Append(arq);
 
-    Writeln(arq, Lines.ToString, '|', PF.Nome, '|', PF.CPF, '|', PF.RG, '|', PF.Email, '|', PF.Telefone, '|', PF.Data, '|', PF.Nacionalidade, '|', PF.Grau, '|', PF.Profissao, '|', PF.CEP, '|', PF.Endereco, '|', PF.Numero, '|', PF.Bairro, '|', PF.Municipio, '|', PF.UF, '|', PF.Tipo);
+    Writeln(arq, Lines.ToString, '|', PF.Nome, '|', PF.CPF, '|', PF.RG, '|', PF.Email, '|', PF.Telefone, '|', PF.Data, '|', PF.Nacionalidade, '|', PF.Grau, '|', PF.Profissao, '|', PF.CEP, '|', PF.Endereco, '|', PF.Numero, '|', PF.Bairro, '|', PF.Municipio, '|', PF.UF, '|', PF.Tipo, '|');
     EditClear;
     Application.MessageBox('Cliente cadastrado com sucesso!!','Aviso',mb_Ok+mb_IconInformation);
 
@@ -173,7 +180,7 @@ begin
     CloseFile(arq);
     Append(arq);
 
-    Writeln(arq, Lines.ToString, '|', PJ.Nome, '|', PJ.CNPJ, '|', PJ.InscricaoMunicipal, '|', PJ.Email, '|', PJ.Telefone, '|', PJ.Data, '|', PJ.Nacionalidade, '|', PJ.CEP, '|', PJ.Endereco, '|', PJ.Numero, '|', PJ.Bairro, '|', PJ.Municipio, '|', PJ.UF, '|', PJ.Tipo);
+    Writeln(arq, Lines.ToString, '|', PJ.Nome, '|', PJ.CNPJ, '|', PJ.InscricaoMunicipal, '|', PJ.Email, '|', PJ.Telefone, '|', PJ.Data, '|', PJ.Nacionalidade, '|', '---------------------', '|', '---------------------', '|', PJ.CEP, '|', PJ.Endereco, '|', PJ.Numero, '|', PJ.Bairro, '|', PJ.Municipio, '|', PJ.UF, '|', PJ.Tipo, '|');
     EditClear;
     Application.MessageBox('Cliente cadastrado com sucesso!!','Aviso',mb_Ok+mb_IconInformation);
 

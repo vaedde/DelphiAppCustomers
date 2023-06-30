@@ -401,8 +401,6 @@ object frmMain: TfrmMain
       Color = clWhite
       ParentBackground = False
       TabOrder = 2
-      ExplicitLeft = 144
-      ExplicitTop = 96
       object imgSearch: TImage
         Left = 397
         Top = 175
@@ -486,13 +484,14 @@ object frmMain: TfrmMain
         Font.Style = []
         ParentFont = False
       end
-      object Edit1: TEdit
+      object edtSearch: TEdit
         Left = 6
         Top = 175
         Width = 385
         Height = 23
         TabOrder = 0
         TextHint = 'Pesquisar por nome ou c'#243'digo'
+        OnKeyUp = edtSearchKeyUp
       end
       object pnlQuantCad: TPanel
         Left = 6
@@ -563,10 +562,12 @@ object frmMain: TfrmMain
         Margins.Right = 5
         Margins.Bottom = 5
         Align = alBottom
-        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect, goFixedRowDefAlign]
+        ColCount = 16
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goRowSelect, goFixedRowDefAlign]
         TabOrder = 5
-        ExplicitLeft = 37
-        ExplicitTop = 123
+        ExplicitLeft = 189
+        ExplicitTop = 382
       end
     end
   end
