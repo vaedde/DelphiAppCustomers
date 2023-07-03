@@ -1,6 +1,7 @@
 object frmInserir: TfrmInserir
   Left = 0
   Top = 0
+  Anchors = [akLeft, akTop, akRight, akBottom]
   BorderStyle = bsNone
   Caption = 'frmInserir'
   ClientHeight = 521
@@ -11,6 +12,7 @@ object frmInserir: TfrmInserir
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  WindowState = wsMaximized
   OnShow = FormShow
   TextHeight = 15
   object pnlForm: TPanel
@@ -28,11 +30,9 @@ object frmInserir: TfrmInserir
       Top = 0
       Width = 976
       Height = 521
-      ActivePage = Empresa
+      ActivePage = Cliente
       Align = alClient
       TabOrder = 0
-      ExplicitLeft = 120
-      ExplicitTop = 216
       object Cliente: TTabSheet
         Caption = 'Pessoa F'#237'sica'
         object pnlMianF: TPanel
@@ -45,6 +45,9 @@ object frmInserir: TfrmInserir
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
+          DesignSize = (
+            968
+            491)
           object lblCPF: TLabel
             Left = 151
             Top = 14
@@ -293,6 +296,7 @@ object frmInserir: TfrmInserir
             Top = 253
             Width = 934
             Height = 233
+            Anchors = [akLeft, akTop, akRight, akBottom]
             BevelKind = bkFlat
             BevelOuter = bvNone
             TabOrder = 16
@@ -335,6 +339,7 @@ object frmInserir: TfrmInserir
             Top = 162
             Width = 664
             Height = 82
+            Anchors = [akLeft, akTop, akRight]
             BevelKind = bkFlat
             BevelOuter = bvNone
             TabOrder = 17
@@ -387,6 +392,9 @@ object frmInserir: TfrmInserir
           Color = clWhite
           ParentBackground = False
           TabOrder = 0
+          DesignSize = (
+            968
+            491)
           object lblCNPJ: TLabel
             Left = 151
             Top = 14
@@ -595,6 +603,7 @@ object frmInserir: TfrmInserir
             Top = 253
             Width = 934
             Height = 233
+            Anchors = [akLeft, akTop, akRight, akBottom]
             BevelKind = bkFlat
             BevelOuter = bvNone
             TabOrder = 14
@@ -634,9 +643,10 @@ object frmInserir: TfrmInserir
           end
           object pnlLine1: TPanel
             Left = 151
-            Top = 165
+            Top = 162
             Width = 799
             Height = 82
+            Anchors = [akLeft, akTop, akRight]
             BevelKind = bkFlat
             BevelOuter = bvNone
             TabOrder = 15

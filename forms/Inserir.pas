@@ -107,6 +107,8 @@ var
   Lines : Integer;
 begin
   try
+    Reset(arq);
+    Lines := 1;
     PF := TPFisica.Create;
     PF.Nome          := edtNomeComp.Text;
     PF.CPF           := edtCPF.Text;
@@ -124,9 +126,8 @@ begin
     PF.Municipio     := edtMunicipioF.Text;
     PF.UF            := edtUFF.Text;
     PF.Tipo          := 'PF';
+    PF.Status        := 1;
 
-    Reset(arq);
-    Lines := 1;
     while (not Eof(arq)) do begin
       Readln(arq, Linha);
       Lines := Lines + 1;
@@ -135,7 +136,7 @@ begin
     CloseFile(arq);
     Append(arq);
 
-    Writeln(arq, Lines.ToString, '|', PF.Nome, '|', PF.CPF, '|', PF.RG, '|', PF.Email, '|', PF.Telefone, '|', PF.Data, '|', PF.Nacionalidade, '|', PF.Grau, '|', PF.Profissao, '|', PF.CEP, '|', PF.Endereco, '|', PF.Numero, '|', PF.Bairro, '|', PF.Municipio, '|', PF.UF, '|', PF.Tipo, '|');
+    Writeln(arq, Lines.ToString, '|', PF.Nome, '|', PF.CPF, '|', PF.RG, '|', PF.Email, '|', PF.Telefone, '|', PF.Data, '|', PF.Nacionalidade, '|', PF.Grau, '|', PF.Profissao, '|', PF.CEP, '|', PF.Endereco, '|', PF.Numero, '|', PF.Bairro, '|', PF.Municipio, '|', PF.UF, '|', PF.Tipo, '|', PF.Status);
     EditClear;
     Application.MessageBox('Cliente cadastrado com sucesso!!','Aviso',mb_Ok+mb_IconInformation);
 
@@ -171,6 +172,7 @@ begin
     PJ.Municipio          := edtMunicipioJ.Text;
     PJ.UF                 := edtUFJ.Text;
     PJ.Tipo               := 'PJ';
+    PJ.Status             := 1;
 
     while (not Eof(arq)) do begin
       Readln(arq, Linha);
@@ -180,7 +182,7 @@ begin
     CloseFile(arq);
     Append(arq);
 
-    Writeln(arq, Lines.ToString, '|', PJ.Nome, '|', PJ.CNPJ, '|', PJ.InscricaoMunicipal, '|', PJ.Email, '|', PJ.Telefone, '|', PJ.Data, '|', PJ.Nacionalidade, '|', '---------------------', '|', '---------------------', '|', PJ.CEP, '|', PJ.Endereco, '|', PJ.Numero, '|', PJ.Bairro, '|', PJ.Municipio, '|', PJ.UF, '|', PJ.Tipo, '|');
+    Writeln(arq, Lines.ToString, '|', PJ.Nome, '|', PJ.CNPJ, '|', PJ.InscricaoMunicipal, '|', PJ.Email, '|', PJ.Telefone, '|', PJ.Data, '|', PJ.Nacionalidade, '|', '---------------------', '|', '---------------------', '|', PJ.CEP, '|', PJ.Endereco, '|', PJ.Numero, '|', PJ.Bairro, '|', PJ.Municipio, '|', PJ.UF, '|', PJ.Tipo, '|', PJ.Status);
     EditClear;
     Application.MessageBox('Cliente cadastrado com sucesso!!','Aviso',mb_Ok+mb_IconInformation);
 

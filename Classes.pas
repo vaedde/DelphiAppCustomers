@@ -32,10 +32,11 @@ type
       procedure SetMunicipio(const Value: String);
       procedure SetNumero(const Value: String);
       procedure SetUF(const Value: String);
-    procedure SetData(const Value: String);
-    procedure SetTipo(const Value: String);
-    procedure SetNacionalidade(const Value: String);
+      procedure SetData(const Value: String);
+      procedure SetTipo(const Value: String);
+      procedure SetNacionalidade(const Value: String);
     public
+      Status : Integer;
       property CEP       : String read FCEP write SetCEP;
       property Endereco  : String read FEndereco write SetEndereco;
       property Numero    : String read FNumero write SetNumero;
@@ -86,7 +87,31 @@ type
       property Atuacao            : String read FAtuacao write SetAtuacao;
   end;
 
+  TCelula = class
+    private
 
+    public
+      Pessoa : TPessoa;
+      Prox : TCelula;
+      constructor Create;
+  end;
+
+  TPilha = class
+    private
+      function    CreateCel : TCelula;
+
+    public
+      Head  : TCelula;
+      constructor Create;
+      destructor  Destroy; override;
+      procedure   CreateHead;
+      procedure   AddCel(Pessoa: TPessoa);
+      function    DelCel : TPessoa;
+      function    Count : Integer;
+  end;
+
+  var
+    Cel : TCelula;
 
 implementation
 
@@ -291,6 +316,73 @@ begin
     Application.MessageBox('Preencha o campo UF corretamente!!','Aviso',mb_Ok+mb_IconExclamation);
     raise Exception.Create('Preencha o campo UF!!');
   end;
+end;
+
+{ TCelula }
+
+constructor TCelula.Create;
+begin
+  inherited;
+end;
+
+{ TPilha }
+
+procedure TPilha.AddCel(Pessoa: TPessoa);
+begin
+  Cel := CreateCel;
+  Cel.Pessoa := Pessoa;
+  Cel.Prox := Self.Head.Prox;
+  Self.Head.Prox:=Cel;
+end;
+
+function TPilha.Count: Integer;
+var
+I : Integer;
+begin
+  Cel:=Self.Head.Prox;
+
+  I:=0;
+
+  while Cel<>nil do
+  begin
+    I:=i+1;
+    Cel:=Cel.Prox;
+  end;
+
+  Result:=I;
+end;
+
+constructor TPilha.Create;
+begin
+  inherited;
+end;
+
+function TPilha.CreateCel: TCelula;
+begin
+  Cel := TCelula.Create;
+  Cel.Pessoa := nil;
+  Cel.Prox := nil;
+  Result := Cel;
+end;
+
+procedure TPilha.CreateHead;
+begin
+  Self.Head := CreateCel;
+end;
+
+function TPilha.DelCel: TPessoa;
+var
+  Cel : TCelula;
+begin
+  Cel:=Self.Head.Prox;
+  Self.Head.Prox := Cel.Prox;
+  Result:=Cel.Pessoa;
+  Cel.Destroy;
+end;
+
+destructor TPilha.Destroy;
+begin
+  inherited;
 end;
 
 end.

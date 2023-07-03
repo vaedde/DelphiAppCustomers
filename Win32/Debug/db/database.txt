@@ -1,7 +1,9 @@
-1|Samuel Leal de Abreu|13979326942|145599610|samuellealdeabreu@gmail.com|41992052335|12/07/2005|Brasileiro|Superior Incompleto|Desenvolvedor|80620230|Rua Monsenhor Manoel Vicente|1004|Água Verde|Curitiba|PR|PF|
-2|Luis Felipe Kryzozun|14205733909|151011519|luiskry@gmail.com|41996615574|22/04/2004|Brasileiro|Superior Incompleto|Desenvolvedor de Sistemas|83070375|Rua Sílvio Caldas|289|Roseira|São José dos Pinhais|PR|PF|
-3|Schattdecor|03270248000160|032702480160|schattdecor@outlook.com|41940097600|08/07/1999|Alemã|---------------------|--------------------|83070152|R. Francisco Munõz Madrid|2220|Roseira de São Sebastião|São José Dos Pinhais|PR|PJ|
-4|Nike|59546515000134|595465150134|nike@gmail.com|41933580621|25/01/1964|Estadunidense|---------------------|--------------------|80010180|Rua Werner Siemens|111|Lapa de Baixo|São Paulo|SP|PJ|
-5|Coca-Cola|49190159000105|491901590105|cocacola@gmail.com|41908001100|17/09/1892|Estadunidense|---------------------|--------------------|81650050|R. Bartolomeu Lourenço de Gusmão|2873|Boqueirão|Curitiba|PR|PJ|
-6|Eduardo Cardozo Huszcz|09745066990|146782990|eduardo.cardozo@rpinfo.com.br|41984281269|16/10/2006|Brasileiro|Médio Incompleto|Desenvolvedor de Sistemas|81750190|Rua Paulo Setubal|4753|Boqueirão|Curitiba|PR|PF|
-7|Lucas Siqueira|13205514912|148836215|lucas.siqueira@rpinfo.com|41995266938|18/10/2004|Brasileiro|Analfabeto|Garoto de Esquina|81935665|Rua Eduardo Pinto da Rocha|366|Sítio Cercado|Curitiba|PR|PF|
+1|Samuel Leal de Abreu|13979326942|145599610|samuellealdeabreu@gmail.com|41992052335|12/07/2005|Brasileiro|Superior Incompleto|Desenvolvedor|80620230|Rua Monsenhor Manoel Vicente|1004|Água Verde|Curitiba|PR|PF|0
+2|Luis Felipe Kryzozun|14205733909|151011519|luiskry@gmail.com|41996615574|22/04/2004|Brasileiro|Superior Incompleto|Desenvolvedor de Sistemas|83070375|Rua Sílvio Caldas|289|Roseira|São José dos Pinhais|PR|PF|0
+3|Schattdecor|03270248000160|032702480160|schattdecor@outlook.com|41940097600|08/07/1999|Alemã|---------------------|--------------------|83070152|R. Francisco Munõz Madrid|2220|Roseira de São Sebastião|São José Dos Pinhais|PR|PJ|1
+4|Nike|59546515000134|595465150134|nike@gmail.com|41933580621|25/01/1964|Estadunidense|---------------------|--------------------|80010180|Rua Werner Siemens|111|Lapa de Baixo|São Paulo|SP|PJ|0
+5|Coca-Cola|49190159000105|491901590105|cocacola@gmail.com|41908001100|17/09/1892|Estadunidense|---------------------|--------------------|81650050|R. Bartolomeu Lourenço de Gusmão|2873|Boqueirão|Curitiba|PR|PJ|1
+6|Eduardo Cardozo Huszcz|09745066990|146782990|eduardo.cardozo@rpinfo.com.br|41984281269|16/10/2006|Brasileiro|Médio Incompleto|Desenvolvedor de Sistemas|81750190|Rua Paulo Setubal|4753|Boqueirão|Curitiba|PR|PF|0
+7|Lucas Siqueira|13205514912|148836215|lucas.siqueira@rpinfo.com|41995266938|18/10/2004|Brasileiro|Analfabeto|Garoto de Esquina|81935665|Rua Eduardo Pinto da Rocha|366|Sítio Cercado|Curitiba|PR|PF|1
+8|Elizabeth Aparecida Leal|72017147915|145597230|elizabethleal@gmail.com|41991256625|16/07/1969|Brasileiro|Superior Completo|Professora|80620230|Rua Monsenhor Manoel Vicente|1004|Água Verde|Curitiba|PR|PF|1
+9|Supermercado Jacomar LTDA|78413325000105|501000523314|Rede de Supermercados|41933718700|20/06/1984|Brasileiro|---------------------|---------------------|81570001|Av. Sen. Salgado Filho|4487|Uberaba|Curitiba|PR|PJ|1
