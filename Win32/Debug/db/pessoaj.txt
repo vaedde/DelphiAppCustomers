@@ -1,0 +1,4 @@
+1|Supermercado Jacomar LTDA|78413325000105|501000523314|Rede de Supermercados|41933718700|20/06/1984|Brasileiro|Rede de Supermercados|81570001|Av. Sen. Salgado Filho|4487|Uberaba|Curitiba|PR|1|
+2|Schattdecor|03270248000160|032702480160|schattdecor@outlook.com|41940097600|08/07/1999|Alem√£|Ind√∫stria de M√≥veis|83070152|R. Francisco Mun√µz Madrid|2220|Roseira de S√£o Sebasti√£o|S√£o Jos√© Dos Pinhais|PR|1|
+3|Nike|59546515000134|595465150134|nike@gmail.com|41933580621|25/01/1964|Estadunidense|Fabrica de T√™nis|80010180|Rua Werner Siemens|111|Lapa de Baixo|S√£o Paulo|SP|0|
+4|Coca-Cola|49190159000105|491901590105|cocacola@gmail.com|41908001100|17/09/1892|Estadunidense|Fabrica de Bebidas Gaseficadas|81650050|R. Bartolomeu Louren√ßo de Gusm√£o|2873|Boqueir√£o|Curitiba|PR|1|5|Selettra|07781920000133|727811920300|selettra.cc@outlook.com|41933830403|28/12/2005|Brasileira|AutomaÁ„o AGV|83070200|R. Santa EfigÍnia|31|Roseira de S„o Sebasti„o|S„o JosÈ dos Pinhais|PR|1

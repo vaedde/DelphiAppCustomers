@@ -1,0 +1,5 @@
+1|Samuel Leal de Abreu|13979326942|145599610|samuellealdeabreu@gmail.com|41992052335|12/07/2005|Brasileiro|Superior Incompleto|Desenvolvedor|80620230|Rua Monsenhor Manoel Vicente|1004|Água Verde|Curitiba|PR|1|
+2|Luis Felipe Kryzozun|14205733909|151011519|luiskry@gmail.com|41996615574|22/04/2004|Brasileiro|Superior Incompleto|Desenvolvedor de Sistemas|83070375|Rua Sílvio Caldas|289|Roseira|São José dos Pinhais|PR|0|
+3|Eduardo Cardozo Huszcz|09745066990|146782990|eduardo.cardozo@rpinfo.com.br|41984281269|16/10/2006|Brasileiro|Médio Incompleto|Desenvolvedor de Sistemas|81750190|Rua Paulo Setubal|4753|Boqueirão|Curitiba|PR|0|
+4|Lucas Siqueira|13205514912|148836215|lucas.siqueira@rpinfo.com|41995266938|18/10/2004|Brasileiro|Analfabeto|Garoto de Esquina|81935665|Rua Eduardo Pinto da Rocha|366|Sítio Cercado|Curitiba|PR|1|
+5|Elizabeth Aparecida Leal|72017147915|145597230|elizabethleal@gmail.com|41991256625|16/07/1969|Brasileiro|Superior Completo|Professora|80620230|Rua Monsenhor Manoel Vicente|1004|Água Verde|Curitiba|PR|1|

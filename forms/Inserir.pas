@@ -85,11 +85,13 @@ type
     procedure btnAddFClick(Sender: TObject);
     procedure btnAddJClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure imgSearchFClick(Sender: TObject);
+    procedure imgSearchJClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
-    arq: TextFile;
+    dbpf, dbpj : TextFile;
     PF : TPFisica;
     PJ : TPJuridica;
     procedure EditClear;
@@ -107,7 +109,7 @@ var
   Lines : Integer;
 begin
   try
-    Reset(arq);
+    Reset(dbpf);
     Lines := 1;
     PF := TPFisica.Create;
     PF.Nome          := edtNomeComp.Text;
@@ -125,23 +127,22 @@ begin
     PF.Bairro        := edtBairroF.Text;
     PF.Municipio     := edtMunicipioF.Text;
     PF.UF            := edtUFF.Text;
-    PF.Tipo          := 'PF';
-    PF.Status        := 1;
+    PF.Status       := '1';
 
-    while (not Eof(arq)) do begin
-      Readln(arq, Linha);
+    while (not Eof(dbpf)) do begin
+      Readln(dbpf, Linha);
       Lines := Lines + 1;
     end;
 
-    CloseFile(arq);
-    Append(arq);
+    CloseFile(dbpf);
+    Append(dbpf);
 
-    Writeln(arq, Lines.ToString, '|', PF.Nome, '|', PF.CPF, '|', PF.RG, '|', PF.Email, '|', PF.Telefone, '|', PF.Data, '|', PF.Nacionalidade, '|', PF.Grau, '|', PF.Profissao, '|', PF.CEP, '|', PF.Endereco, '|', PF.Numero, '|', PF.Bairro, '|', PF.Municipio, '|', PF.UF, '|', PF.Tipo, '|', PF.Status);
+    Writeln(dbpf, Lines.ToString, '|', PF.Nome, '|', PF.CPF, '|', PF.RG, '|', PF.Email, '|', PF.Telefone, '|', PF.Data, '|', PF.Nacionalidade, '|', PF.Grau, '|', PF.Profissao, '|', PF.CEP, '|', PF.Endereco, '|', PF.Numero, '|', PF.Bairro, '|', PF.Municipio, '|', PF.UF, '|', PF.Status);
     EditClear;
     Application.MessageBox('Cliente cadastrado com sucesso!!','Aviso',mb_Ok+mb_IconInformation);
 
     PJ.Free;
-    CloseFile(arq);
+    CloseFile(dbpf);
   except
     Application.MessageBox('Não foi possível cadastrar um novo cliente!!','Aviso',mb_Ok+mb_IconExclamation);
   end;
@@ -153,7 +154,7 @@ var
   Lines : Integer;
 begin
   try
-    Reset(arq);
+    Reset(dbpj);
 
     Lines := 1;
 
@@ -165,29 +166,31 @@ begin
     PJ.Telefone           := edtTelefoneJ.Text;
     PJ.Data               := edtDataCriacao.Text;
     PJ.Nacionalidade      := edtNacionalidadeJ.Text;
+    PJ.Atuacao            := edtAtuacao.Text;
     PJ.CEP                := edtCEPJ.Text;
     PJ.Endereco           := edtEnderecoJ.Text;
     PJ.Numero             := edtNumeroJ.Text;
     PJ.Bairro             := edtBairroJ.Text;
     PJ.Municipio          := edtMunicipioJ.Text;
     PJ.UF                 := edtUFJ.Text;
-    PJ.Tipo               := 'PJ';
-    PJ.Status             := 1;
+    PJ.Status             := '1';
 
-    while (not Eof(arq)) do begin
-      Readln(arq, Linha);
+    while (not Eof(dbpj)) do begin
+      Readln(dbpj, Linha);
       Lines := Lines + 1;
     end;
 
-    CloseFile(arq);
-    Append(arq);
+    PJ.ID := Lines.ToString;
 
-    Writeln(arq, Lines.ToString, '|', PJ.Nome, '|', PJ.CNPJ, '|', PJ.InscricaoMunicipal, '|', PJ.Email, '|', PJ.Telefone, '|', PJ.Data, '|', PJ.Nacionalidade, '|', '---------------------', '|', '---------------------', '|', PJ.CEP, '|', PJ.Endereco, '|', PJ.Numero, '|', PJ.Bairro, '|', PJ.Municipio, '|', PJ.UF, '|', PJ.Tipo, '|', PJ.Status);
+    CloseFile(dbpj);
+    Append(dbpj);
+
+    Writeln(dbpj, PJ.ID, '|', PJ.Nome, '|', PJ.CNPJ, '|', PJ.InscricaoMunicipal, '|', PJ.Email, '|', PJ.Telefone, '|', PJ.Data, '|', PJ.Nacionalidade, '|', PJ.Atuacao, '|', PJ.CEP, '|', PJ.Endereco, '|', PJ.Numero, '|', PJ.Bairro, '|', PJ.Municipio, '|', PJ.UF, '|', PJ.Status);
     EditClear;
     Application.MessageBox('Cliente cadastrado com sucesso!!','Aviso',mb_Ok+mb_IconInformation);
 
     PJ.Free;
-    CloseFile(arq);
+    CloseFile(dbpj);
   except
     Application.MessageBox('Não foi possível cadastrar um novo cliente!!','Aviso',mb_Ok+mb_IconExclamation);
   end;
@@ -195,9 +198,9 @@ end;
 
 procedure TfrmInserir.EditClear;
 var
-  i: Integer;
+  I : Integer;
 begin
-  for i := 0 to Self.ComponentCount -1 do
+  for I := 0 to Self.ComponentCount -1 do
   begin
     if Self.Components[i] is TEdit then begin
       TEdit(Self.Components[i]).Clear;
@@ -216,15 +219,79 @@ end;
 
 procedure TfrmInserir.FormShow(Sender: TObject);
 begin
-  if not FileExists(GetCurrentDir + '.\db\database.txt') then begin
+  if not FileExists(GetCurrentDir + '\db\pessoaf.txt') then begin
     try
-      FileCreate(GetCurrentDir + '\db\database.txt');
+      FileCreate(GetCurrentDir + '\db\pessoaf.txt');
     except
       Application.MessageBox('Não foi possível criar o arquivo!!','Aviso',mb_Ok+mb_IconExclamation);
     end;
   end else begin
-    AssignFile(arq, GetCurrentDir + '\db\database.txt');
+    AssignFile(dbpf, GetCurrentDir + '\db\pessoaf.txt');
+  end;
+
+  if not FileExists(GetCurrentDir + '\db\pessoaj.txt') then begin
+    try
+      FileCreate(GetCurrentDir + '\db\pessoaj.txt');
+    except
+      Application.MessageBox('Não foi possível criar o arquivo!!','Aviso',mb_Ok+mb_IconExclamation);
+    end;
+  end else begin
+    AssignFile(dbpj, GetCurrentDir + '\db\pessoaj.txt');
   end;
 end;	
+
+procedure TfrmInserir.imgSearchFClick(Sender: TObject);
+var
+  TempCep : String;
+begin
+  TempCep := edtCEPF.Text;
+  if Length(TempCep) <> 8 then begin
+  ShowMessage('A formatação do seu CEP está errada!');
+  end else begin
+  RESTRequest1.Resource := TempCep + '/json';
+  RESTRequest1.Execute;
+    if RESTRequest1.Response.StatusCode = 200 then begin
+      if RESTRequest1.Response.Content.IndexOf('erro') > 0 then begin
+        ShowMessage('CEP Não encontrado');
+      end else with FDMemTable1 do begin
+        edtEnderecoF.Clear;
+        edtBairroF.Clear;
+        edtMunicipioF.Clear;
+        edtUFF.Clear;
+        edtEnderecoF.Text  := FieldByName('logradouro').AsString;
+        edtBairroF.Text    := FieldByName('bairro').AsString;
+        edtMunicipioF.Text := FieldByName('localidade').AsString;
+        edtUFF.Text        := FieldByName('uf').AsString;
+      end;
+    end;
+  end;
+end;
+
+procedure TfrmInserir.imgSearchJClick(Sender: TObject);
+var
+  TempCep : String;
+begin
+  TempCep := edtCEPJ.Text;
+  if Length(TempCep) <> 8 then begin
+  ShowMessage('A formatação do seu CEP está errada!');
+  end else begin
+  RESTRequest1.Resource := TempCep + '/json';
+  RESTRequest1.Execute;
+    if RESTRequest1.Response.StatusCode = 200 then begin
+      if RESTRequest1.Response.Content.IndexOf('erro') > 0 then begin
+        ShowMessage('CEP Não encontrado');
+      end else with FDMemTable1 do begin
+        edtEnderecoJ.Clear;
+        edtBairroJ.Clear;
+        edtMunicipioJ.Clear;
+        edtUFJ.Clear;
+        edtEnderecoJ.Text  := FieldByName('logradouro').AsString;
+        edtBairroJ.Text    := FieldByName('bairro').AsString;
+        edtMunicipioJ.Text := FieldByName('localidade').AsString;
+        edtUFJ.Text        := FieldByName('uf').AsString;
+      end;
+    end;
+  end;
+end;
 
 end.

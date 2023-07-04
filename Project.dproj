@@ -112,6 +112,10 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Classes.pas"/>
+        <DCCReference Include="forms\Alterar.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

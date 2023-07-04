@@ -30,9 +30,11 @@ object frmInserir: TfrmInserir
       Top = 0
       Width = 976
       Height = 521
-      ActivePage = Cliente
+      ActivePage = Empresa
       Align = alClient
       TabOrder = 0
+      ExplicitLeft = 64
+      ExplicitTop = 208
       object Cliente: TTabSheet
         Caption = 'Pessoa F'#237'sica'
         object pnlMianF: TPanel
@@ -92,6 +94,7 @@ object frmInserir: TfrmInserir
               6048F4931AFBE5F5438C893E42D4C197E616B139AE93918B445C883E5103A300
               EB6E9148FC1FE49B48061E441F1BBB910C0466B2867413F3473A10884CA21E77
               D108841C7F3FF0098FD44E19B051CAC90000000049454E44AE426082}
+            OnClick = imgSearchFClick
           end
           object lblTelefoneF: TLabel
             Left = 556
@@ -439,6 +442,7 @@ object frmInserir: TfrmInserir
               6048F4931AFBE5F5438C893E42D4C197E616B139AE93918B445C883E5103A300
               EB6E9148FC1FE49B48061E441F1BBB910C0466B2867413F3473A10884CA21E77
               D108841C7F3FF0098FD44E19B051CAC90000000049454E44AE426082}
+            OnClick = imgSearchJClick
           end
           object lblTelefoneJ: TLabel
             Left = 556
@@ -700,7 +704,9 @@ object frmInserir: TfrmInserir
     end
   end
   object RESTClient1: TRESTClient
-    BaseURL = 'http://viacep.com.br/ws/01001000/json'
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'utf-8, *;q=0.8'
+    BaseURL = 'http://viacep.com.br/ws'
     Params = <>
     SynchronizedEvents = False
     Left = 880
@@ -728,6 +734,8 @@ object frmInserir: TfrmInserir
     Top = 464
   end
   object FDMemTable1: TFDMemTable
+    FieldDefs = <>
+    IndexDefs = <>
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
     ResourceOptions.AssignedValues = [rvSilentMode]
@@ -736,6 +744,7 @@ object frmInserir: TfrmInserir
     UpdateOptions.LockWait = True
     UpdateOptions.FetchGeneratorsPoint = gpNone
     UpdateOptions.CheckRequired = False
+    StoreDefs = True
     Left = 912
     Top = 472
   end
