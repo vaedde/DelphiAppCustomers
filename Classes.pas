@@ -96,7 +96,9 @@ type
       procedure AddFila(Pessoa : TPFisica);
       function  DelFila : TPFisica;
       constructor Create;
+      destructor Destroy; override;
       procedure Clear;
+      procedure Count;
   end;
 
   TFilaPJ = class
@@ -108,6 +110,7 @@ type
       procedure AddFila(Pessoa : TPJuridica);
       function  DelFila : TPJuridica;
       constructor Create;
+      destructor Destroy; override;
       procedure Clear;
   end;
 
@@ -143,7 +146,10 @@ end;
 
 procedure TPFisica.SetGrau(const Value: String);
 begin
-  if Value <> '' then begin
+  if (Value <> '') or (Value = 'Analfabeto') or (Value = 'Até 5º Ano') or (Value = '5º Ano Completo')
+  or (Value = '6º ao 9º Ano') or (Value = 'Fundamental Completo') or (Value = 'Médio Incompleto')
+  or (Value = 'Médio Completo') or (Value = 'Superior Incompleto') or (Value = 'Superior Completo')
+  or (Value = 'Mestrado') or (Value = 'Doutorado') then begin
     FGrau := Value;
   end else begin
     frmInserir.cbxGrau.Clear;
@@ -366,6 +372,11 @@ begin
   Self.FilaPF.Clear;
 end;
 
+procedure TFilaPF.Count;
+begin
+  Self.FilaPF.Count.ToString;
+end;
+
 constructor TFilaPF.Create;
 begin
   Self.FilaPF := TObjectList<TPFisica>.Create;
@@ -378,6 +389,12 @@ begin
   if Self.FilaPF.Count > 0 then begin
     Result := Self.FilaPF.ExtractAt(0);
   end;
+end;
+
+destructor TFilaPF.Destroy;
+begin
+  FreeAndNil(FilaPF);
+  inherited;
 end;
 
 procedure TFilaPF.SetFilaPF(const Value: TObjectList<TPFisica>);
@@ -409,6 +426,12 @@ begin
   if Self.FilaPJ.Count > 0 then begin
     Result := Self.FilaPJ.ExtractAt(0);
   end;
+end;
+
+destructor TFilaPJ.Destroy;
+begin
+  FreeAndNil(FilaPJ);
+  inherited;
 end;
 
 procedure TFilaPJ.SetFilaPJ(const Value: TObjectList<TPJuridica>);

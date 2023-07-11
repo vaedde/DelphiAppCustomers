@@ -30,11 +30,9 @@ object frmInserir: TfrmInserir
       Top = 0
       Width = 976
       Height = 521
-      ActivePage = Empresa
+      ActivePage = Cliente
       Align = alClient
       TabOrder = 0
-      ExplicitLeft = 64
-      ExplicitTop = 208
       object Cliente: TTabSheet
         Caption = 'Pessoa F'#237'sica'
         object pnlMianF: TPanel
@@ -461,7 +459,7 @@ object frmInserir: TfrmInserir
             EditLabel.Caption = 'CEP'
             MaxLength = 8
             NumbersOnly = True
-            TabOrder = 7
+            TabOrder = 8
             Text = ''
           end
           object edtNomeFant: TLabeledEdit
@@ -494,7 +492,7 @@ object frmInserir: TfrmInserir
             EditLabel.Width = 44
             EditLabel.Height = 15
             EditLabel.Caption = 'Atua'#231#227'o'
-            TabOrder = 6
+            TabOrder = 7
             Text = ''
           end
           object edtEnderecoJ: TLabeledEdit
@@ -505,7 +503,7 @@ object frmInserir: TfrmInserir
             EditLabel.Width = 49
             EditLabel.Height = 15
             EditLabel.Caption = 'Endere'#231'o'
-            TabOrder = 8
+            TabOrder = 9
             Text = ''
           end
           object edtNumeroJ: TLabeledEdit
@@ -516,7 +514,7 @@ object frmInserir: TfrmInserir
             EditLabel.Width = 44
             EditLabel.Height = 15
             EditLabel.Caption = 'N'#250'mero'
-            TabOrder = 9
+            TabOrder = 10
             Text = ''
           end
           object edtBairroJ: TLabeledEdit
@@ -527,7 +525,7 @@ object frmInserir: TfrmInserir
             EditLabel.Width = 31
             EditLabel.Height = 15
             EditLabel.Caption = 'Bairro'
-            TabOrder = 10
+            TabOrder = 11
             Text = ''
           end
           object edtMunicipioJ: TLabeledEdit
@@ -538,7 +536,7 @@ object frmInserir: TfrmInserir
             EditLabel.Width = 54
             EditLabel.Height = 15
             EditLabel.Caption = 'Munic'#237'pio'
-            TabOrder = 11
+            TabOrder = 12
             Text = ''
           end
           object edtUFJ: TLabeledEdit
@@ -550,7 +548,7 @@ object frmInserir: TfrmInserir
             EditLabel.Height = 15
             EditLabel.Caption = 'UF'
             MaxLength = 2
-            TabOrder = 12
+            TabOrder = 13
             Text = ''
           end
           object edtCNPJ: TMaskEdit
@@ -589,7 +587,7 @@ object frmInserir: TfrmInserir
             Width = 121
             Height = 23
             Caption = 'Adicionar'
-            TabOrder = 13
+            TabOrder = 14
             OnClick = btnAddJClick
           end
           object edtTelefoneJ: TMaskEdit
@@ -610,7 +608,7 @@ object frmInserir: TfrmInserir
             Anchors = [akLeft, akTop, akRight, akBottom]
             BevelKind = bkFlat
             BevelOuter = bvNone
-            TabOrder = 14
+            TabOrder = 15
             object pnlLine6: TPanel
               AlignWithMargins = True
               Left = 3
@@ -653,7 +651,7 @@ object frmInserir: TfrmInserir
             Anchors = [akLeft, akTop, akRight]
             BevelKind = bkFlat
             BevelOuter = bvNone
-            TabOrder = 15
+            TabOrder = 16
             object pnlLine2: TPanel
               AlignWithMargins = True
               Left = 3
@@ -696,7 +694,7 @@ object frmInserir: TfrmInserir
             EditLabel.Width = 76
             EditLabel.Height = 15
             EditLabel.Caption = 'Nacionalidade'
-            TabOrder = 16
+            TabOrder = 6
             Text = ''
           end
         end

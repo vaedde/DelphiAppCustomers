@@ -1,8 +1,9 @@
-object Form1: TForm1
+object frmAlterar: TfrmAlterar
   Left = 0
   Top = 0
+  Anchors = [akLeft, akTop, akRight, akBottom]
   BorderStyle = bsNone
-  Caption = 'Form1'
+  Caption = 'frmAlterar'
   ClientHeight = 521
   ClientWidth = 976
   Color = clBtnFace
@@ -11,24 +12,29 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  WindowState = wsMaximized
+  OnShow = FormShow
+  ExplicitWidth = 640
+  ExplicitHeight = 480
+  DesignSize = (
+    976
+    521)
   TextHeight = 15
   object PageControl: TPageControl
     Left = 0
-    Top = 0
+    Top = -23
     Width = 976
-    Height = 521
+    Height = 544
     ActivePage = Empresa
-    Align = alClient
+    Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 0
-    ExplicitLeft = 64
-    ExplicitTop = 208
     object Cliente: TTabSheet
       Caption = 'Pessoa F'#237'sica'
       object pnlMianF: TPanel
         Left = 0
         Top = 0
         Width = 968
-        Height = 491
+        Height = 514
         Align = alClient
         BevelOuter = bvNone
         Color = clWhite
@@ -36,7 +42,7 @@ object Form1: TForm1
         TabOrder = 0
         DesignSize = (
           968
-          491)
+          514)
         object lblCPF: TLabel
           Left = 151
           Top = 14
@@ -224,6 +230,7 @@ object Form1: TForm1
           Height = 23
           Caption = 'Alterar'
           TabOrder = 15
+          OnClick = btnAddFClick
         end
         object edtTelefoneF: TMaskEdit
           Left = 556
@@ -240,7 +247,6 @@ object Form1: TForm1
           Top = 128
           Width = 121
           Height = 23
-          Style = csDropDownList
           TabOrder = 7
           Items.Strings = (
             'Analfabeto'
@@ -259,7 +265,7 @@ object Form1: TForm1
           Left = 16
           Top = 253
           Width = 934
-          Height = 233
+          Height = 256
           Anchors = [akLeft, akTop, akRight, akBottom]
           BevelKind = bkFlat
           BevelOuter = bvNone
@@ -269,7 +275,7 @@ object Form1: TForm1
             Left = 3
             Top = 3
             Width = 924
-            Height = 223
+            Height = 246
             Align = alClient
             BevelKind = bkFlat
             BevelOuter = bvNone
@@ -279,7 +285,7 @@ object Form1: TForm1
               Left = 3
               Top = 3
               Width = 914
-              Height = 213
+              Height = 236
               Align = alClient
               BevelKind = bkFlat
               BevelOuter = bvNone
@@ -289,7 +295,7 @@ object Form1: TForm1
                 Left = 3
                 Top = 3
                 Width = 904
-                Height = 203
+                Height = 226
                 Align = alClient
                 BevelKind = bkFlat
                 BevelOuter = bvNone
@@ -350,7 +356,7 @@ object Form1: TForm1
         Left = 0
         Top = 0
         Width = 968
-        Height = 491
+        Height = 514
         Align = alClient
         BevelOuter = bvNone
         Color = clWhite
@@ -358,7 +364,7 @@ object Form1: TForm1
         TabOrder = 0
         DesignSize = (
           968
-          491)
+          514)
         object lblCNPJ: TLabel
           Left = 151
           Top = 14
@@ -526,6 +532,7 @@ object Form1: TForm1
           Height = 23
           Caption = 'Alterar'
           TabOrder = 13
+          OnClick = btnAddJClick
         end
         object edtTelefoneJ: TMaskEdit
           Left = 556
@@ -541,7 +548,7 @@ object Form1: TForm1
           Left = 16
           Top = 253
           Width = 934
-          Height = 233
+          Height = 256
           Anchors = [akLeft, akTop, akRight, akBottom]
           BevelKind = bkFlat
           BevelOuter = bvNone
@@ -551,7 +558,7 @@ object Form1: TForm1
             Left = 3
             Top = 3
             Width = 924
-            Height = 223
+            Height = 246
             Align = alClient
             BevelKind = bkFlat
             BevelOuter = bvNone
@@ -561,7 +568,7 @@ object Form1: TForm1
               Left = 3
               Top = 3
               Width = 914
-              Height = 213
+              Height = 236
               Align = alClient
               BevelKind = bkFlat
               BevelOuter = bvNone
@@ -571,7 +578,7 @@ object Form1: TForm1
                 Left = 3
                 Top = 3
                 Width = 904
-                Height = 203
+                Height = 226
                 Align = alClient
                 BevelKind = bkFlat
                 BevelOuter = bvNone

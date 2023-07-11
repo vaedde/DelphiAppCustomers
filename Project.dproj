@@ -87,8 +87,8 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>files\img\user_icon.ico</Icon_MainIcon>
-        <UWP_DelphiLogo44>..\..\..\App Clientes\files\img\user_icon (48).png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\..\..\App Clientes\files\img\user_icon(128).png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>files\img\user_icon (48).png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>files\img\user_icon(128).png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -113,7 +113,7 @@
         </DCCReference>
         <DCCReference Include="Classes.pas"/>
         <DCCReference Include="forms\Alterar.pas">
-            <Form>Form1</Form>
+            <Form>frmAlterar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
@@ -142,23 +142,23 @@
                 </Source>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="..\..\..\App Clientes\files\img\user_icon (48).png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="Win32\Debug\Project.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>Project.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="files\img\user_icon (48).png" Configuration="Debug" Class="UWP_DelphiLogo44">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\App Clientes\files\img\user_icon(128).png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                <DeployFile LocalName="files\img\user_icon(128).png" Configuration="Debug" Class="UWP_DelphiLogo150">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo150x150.png</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Win32\Debug\Project.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>Project.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

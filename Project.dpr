@@ -5,15 +5,16 @@ uses
   Main in 'Main.pas' {frmMain},
   Inserir in 'forms\Inserir.pas' {frmInserir},
   Classes in 'Classes.pas',
-  Alterar in 'forms\Alterar.pas' {Form1};
+  Alterar in 'forms\Alterar.pas' {frmAlterar};
 
 {$R *.res}
 
 begin
   Application.Initialize;
+  ReportMemoryLeaksOnShutdown := (DebugHook) <> 0;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmAlterar, frmAlterar);
   Application.CreateForm(TfrmInserir, frmInserir);
-  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.

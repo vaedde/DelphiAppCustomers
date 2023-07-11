@@ -89,11 +89,9 @@ type
     procedure imgSearchJClick(Sender: TObject);
   private
     { Private declarations }
+    dbpf, dbpj : TextFile;
   public
     { Public declarations }
-    dbpf, dbpj : TextFile;
-    PF : TPFisica;
-    PJ : TPJuridica;
     procedure EditClear;
   end;
 
@@ -103,10 +101,13 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Main;
 procedure TfrmInserir.btnAddFClick(Sender: TObject);
 var
-  I, Linha, Nome : String;
+  Linha : String;
   Lines : Integer;
+  PF : TPFisica;
 begin
   try
     Reset(dbpf);
@@ -134,14 +135,15 @@ begin
       Lines := Lines + 1;
     end;
 
+    PF.ID := Lines.ToString;
+
     CloseFile(dbpf);
     Append(dbpf);
 
-    Writeln(dbpf, Lines.ToString, '|', PF.Nome, '|', PF.CPF, '|', PF.RG, '|', PF.Email, '|', PF.Telefone, '|', PF.Data, '|', PF.Nacionalidade, '|', PF.Grau, '|', PF.Profissao, '|', PF.CEP, '|', PF.Endereco, '|', PF.Numero, '|', PF.Bairro, '|', PF.Municipio, '|', PF.UF, '|', PF.Status);
+    Writeln(dbpf, PF.Status, '|', PF.Nome, '|', PF.CPF, '|', PF.RG, '|', PF.Email, '|', PF.Telefone, '|', PF.Data, '|', PF.Nacionalidade, '|', PF.Grau, '|', PF.Profissao, '|', PF.CEP, '|', PF.Endereco, '|', PF.Numero, '|', PF.Bairro, '|', PF.Municipio, '|', PF.UF, '|', PF.Status, '|');
     EditClear;
     Application.MessageBox('Cliente cadastrado com sucesso!!','Aviso',mb_Ok+mb_IconInformation);
-
-    PJ.Free;
+    PF.Free;
     CloseFile(dbpf);
   except
     Application.MessageBox('Não foi possível cadastrar um novo cliente!!','Aviso',mb_Ok+mb_IconExclamation);
@@ -150,8 +152,9 @@ end;
 
 procedure TfrmInserir.btnAddJClick(Sender: TObject);
 var
-  I, Linha, Nome : String;
+  Linha : String;
   Lines : Integer;
+  PJ : TPJuridica;
 begin
   try
     Reset(dbpj);
@@ -185,10 +188,9 @@ begin
     CloseFile(dbpj);
     Append(dbpj);
 
-    Writeln(dbpj, PJ.ID, '|', PJ.Nome, '|', PJ.CNPJ, '|', PJ.InscricaoMunicipal, '|', PJ.Email, '|', PJ.Telefone, '|', PJ.Data, '|', PJ.Nacionalidade, '|', PJ.Atuacao, '|', PJ.CEP, '|', PJ.Endereco, '|', PJ.Numero, '|', PJ.Bairro, '|', PJ.Municipio, '|', PJ.UF, '|', PJ.Status);
+    Writeln(dbpj, PJ.ID, '|', PJ.Nome, '|', PJ.CNPJ, '|', PJ.InscricaoMunicipal, '|', PJ.Email, '|', PJ.Telefone, '|', PJ.Data, '|', PJ.Nacionalidade, '|', PJ.Atuacao, '|', PJ.CEP, '|', PJ.Endereco, '|', PJ.Numero, '|', PJ.Bairro, '|', PJ.Municipio, '|', PJ.UF, '|', PJ.Status, '|');
     EditClear;
     Application.MessageBox('Cliente cadastrado com sucesso!!','Aviso',mb_Ok+mb_IconInformation);
-
     PJ.Free;
     CloseFile(dbpj);
   except
@@ -210,9 +212,6 @@ begin
     end;
     if Self.Components[i] is TMaskEdit then begin
       TMaskEdit(Self.Components[i]).Clear;
-    end;
-    if Self.Components[i] is TComboBox then begin
-      TComboBox(Self.Components[i]).Clear;
     end;
   end;
 end;
