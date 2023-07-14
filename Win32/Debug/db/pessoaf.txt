@@ -3,6 +3,6 @@
 3|Camila Morret|04325920890|145599610|samuellealdeabreu@gmail.com|41992052335|12/07/2005|Brasileiro|Superior Incompleto|Desenvolvedor de Sistemas|80620230|Rua Monsenhor Manoel Vicente|1004|√Ågua Verde|Curitiba|PR|1|
 4|Lucas Siqueira|70985078059|145599610|samuellealdeabreu@gmail.com|41992052335|12/07/2005|Brasileiro|Superior Incompleto|Desenvolvedor de Sistemas|80620230|Rua Monsenhor Manoel Vicente|1004|√Ågua Verde|Curitiba|PE|0|
 5|Eduardo Cardoso|13979326942|145599610|samuellealdeabreu@gmail.com|41992052335|12/07/2005|Brasileiro|Superior Incompleto|Desenvolvedor de Sistemas|80620230|Rua Monsenhor Manoel Vicente|1004|√Ågua Verde|Curitiba|PR|1|
-6|Lucas Neto|90194687163|149859859|samuellealdeabreu@gmail.com|41992052335|12/07/2005|Brasileiro|Doutorado|Desenvolvedor|80620230|Rua Monsenhor Manoel Vicente|1004|¡gua Verde|Curitiba|PR|1|
+6|Lucas Neto da Silva|90194687163|149859859|samuellealdeabreu@gmail.com|41992052335|12/07/2005|Brasileiro|Doutorado|Desenvolvedor|80620230|Rua Monsenhor Manoel Vicente|1004|¡gua Verde|Curitiba|PR|1|
 7|Luis Felipe Kry|14240328497|145873289|luisfelipe@gmail.com|41993213197|22/04/2004|Brasileiro|Superior Incompleto|Desenvolvedor|80620230|Rua Monsenhor Manoel Vicente|1004|¡gua Verde|Curitiba|PR|1|
-1|aaaaaaa|21231313131|283713120|vpjavpnaep|23784284278|28/47/8247|pfwjefpwjo|Analfabeto|23-8472-9472309|80620230|Rua Monsenhor Manoel Vicente|23213|¡gua Verde|Curitiba|PR|1|
+1|Bernardo Rudolf III|21231313131|283713120|vpjavpnaep|23784284278|28/47/8247|pfwjefpwjo|Analfabeto|23-8472-9472309|80620230|Rua Monsenhor Manoel Vicente|23213|¡gua Verde|Curitiba|PR|1|
